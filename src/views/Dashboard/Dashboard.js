@@ -49,39 +49,40 @@ const cardChartData1 = {
 
 
 const pie = {
-  labels: [
-    'Red',
-    'Green',
-    'Yellow',
-  ],
   datasets: [
     {
-      data: [300, 50, 100],
+      data: [310, 50],
       backgroundColor: [
-        '#FF6384',
-        '#36A2EB',
-        '#FFCE56',
+        '#139DC9',
+        '#83D2B4',
       ],
-      borderWidth:[0,0,0],
+      borderWidth:[0,0],
       hoverBackgroundColor: [
-        '#FF6384',
-        '#36A2EB',
-        '#FFCE56',
+        '#139DC9',
+        '#83D2B4',
       ],
     }],
 };
 
 const bar = {
-  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+  labels: ['January', 'February', 'March', 'April', 'May'],
   datasets: [
     {
       label: 'My First dataset',
-      backgroundColor: 'rgba(255,99,132,0.2)',
-      borderColor: 'rgba(255,99,132,1)',
+      backgroundColor: '#139DC9',
+      borderColor: '#139DC9',
       borderWidth: 1,
-      hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-      hoverBorderColor: 'rgba(255,99,132,1)',
-      data: [65, 59, 80, 81, 56, 55, 40],
+      hoverBackgroundColor: '#139DC9',
+      hoverBorderColor: '#139DC9',
+      data: [22,2,12,32,42],
+    },{
+      label: 'My First dataset',
+      backgroundColor: '#83D2B4',
+      borderColor: '#83D2B4',
+      borderWidth: 1,
+      hoverBackgroundColor: '#83D2B4',
+      hoverBorderColor: '#83D2B4',
+      data: [6,16,26,36,46],
     },
   ],
 };
@@ -510,34 +511,31 @@ class Dashboard extends Component {
   }
 
     componentDidMount() {
-        const myChartRef = this.chartRef.current.getContext("2d");
+        // const myChartRef = this.chartRef.current.getContext("2d");
         
-        new Chart(myChartRef, {
-            type: "bar",
-          
-
-          data : {
-              labels: ["24 Sec", "20 sec", "32 Sec"],
-
-              datasets: [{
-                label: "Blue",
-                backgroundColor: "blue",
-                data: [3, 7, 4]
-              }, {
-                label: "Red",
-                backgroundColor: "red",
-                data: [4, 3, 5]
-              }, {
-                label: "Green",
-                backgroundColor: "green",
-                data: [7, 2, 6]
-              }]
-            },
+        // new Chart(myChartRef, {
+        //     type: "bar",
+        //     data : {
+        //       labels: ["24 Sec", "20 sec", "14 Sec", "12 Sec"],
+        //       datasets: [{
+        //         backgroundColor: "#139DC9",
+        //         data: [3, 7]
+        //       }, {
+        //         backgroundColor: "#83D2B4",
+        //         data: [4, 3]
+        //       }, {
+        //         backgroundColor: "#139DC9",
+        //         data: [7, 2]
+        //       }, {
+        //         backgroundColor: "#83D2B4",
+        //         data: [4, 3]
+        //       }]
+        //     },
             
-            options: {
-                //Customize chart options
-            }
-        });
+        //     options: {
+        //         //Customize chart options
+        //     }
+        // });
     }
 
   toggle() {
@@ -580,22 +578,18 @@ class Dashboard extends Component {
 
           <Col xs="12" sm="6" lg="6">
           <Card>
-            <CardHeader>
-              Bar Chart
-              <div className="card-header-actions">
-                <a href="http://www.chartjs.org" className="card-header-action">
-                  <small className="text-muted">docs</small>
-                </a>
-              </div>
-            </CardHeader>
             <CardBody>
               <div className="chart-wrapper">
-                {/* <Pie data={pie} /> */}
-              
-                <canvas
+              <Bar
+                  data={bar}
+                  options={{
+                    maintainAspectRatio: false
+                  }}
+                />
+                {/* <canvas
                     id="myChart"
                     ref={this.chartRef}
-                />
+                /> */}
               </div>
             </CardBody>
           </Card>
