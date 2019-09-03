@@ -29,7 +29,7 @@ class DefaultHeader extends Component {
         <AppSidebarToggler className="d-md-down-none" display="lg" />
 
         <Nav className="d-md-down-none" navbar>
-          <NavItem className="px-3">
+          {/* <NavItem className="px-3">
             <NavLink to="/dashboard" className="nav-link" >Dashboard</NavLink>
           </NavItem>
           <NavItem className="px-3">
@@ -43,11 +43,11 @@ class DefaultHeader extends Component {
           </NavItem>
           <NavItem className="px-3">
             <NavLink to="#" className="nav-link">Outbound</NavLink>
-          </NavItem>
+          </NavItem> */}
           
         </Nav>
         <Nav className="ml-auto" navbar>
-          <NavItem className="d-md-down-none">
+          {/* <NavItem className="d-md-down-none">
             <NavLink to="#" className="nav-link"><i className="icon-bell"></i><Badge pill color="danger">5</Badge></NavLink>
           </NavItem>
           <NavItem className="d-md-down-none">
@@ -55,11 +55,11 @@ class DefaultHeader extends Component {
           </NavItem>
           <NavItem className="d-md-down-none">
             <NavLink to="#" className="nav-link"><i className="icon-location-pin"></i></NavLink>
-          </NavItem>
+          </NavItem> */}
           <UncontrolledDropdown nav direction="down">
-            <DropdownToggle nav>
+            {/* <DropdownToggle nav>
               <img src={'../../assets/img/avatars/6.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
-            </DropdownToggle>
+            </DropdownToggle> */}
             <DropdownMenu right>
               <DropdownItem header tag="div" className="text-center"><strong>Account</strong></DropdownItem>
               <DropdownItem><i className="fa fa-bell-o"></i> Updates<Badge color="info">42</Badge></DropdownItem>
