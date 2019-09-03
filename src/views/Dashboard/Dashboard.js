@@ -561,6 +561,24 @@ class Dashboard extends Component {
       fileStatus: 'Verified',
       fileSubmitter: 'OutReached Health Services',
       fileReciever: 'NHIC',
+    },{
+      fileName: 'However New',
+      fileDate: 'Jun 11, 2015 - Jul 10, 2015',
+      fileStatus: 'Verified',
+      fileSubmitter: 'OutReached Health Services',
+      fileReciever: 'NHIC',
+    },{
+      fileName: 'Sansa Stark',
+      fileDate: 'Jun 11, 2015 - Jul 10, 2015',
+      fileStatus: 'Verified',
+      fileSubmitter: 'OutReached Health Services',
+      fileReciever: 'NHIC',
+    },{
+      fileName: 'Say What',
+      fileDate: 'Jun 11, 2015 - Jul 10, 2015',
+      fileStatus: 'Verified',
+      fileSubmitter: 'OutReached Health Services',
+      fileReciever: 'NHIC',
     }]
 
     array.forEach(item => {

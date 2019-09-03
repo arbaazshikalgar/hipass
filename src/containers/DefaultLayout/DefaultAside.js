@@ -63,7 +63,7 @@ class DefaultAside extends Component {
     array.forEach(item => {
       row.push(
         <tr>
-          <td className="text-center" height='60px'>
+          <td className="text-center" height='65px'>
             <div>{item.name}</div>
           </td>
           <td>
