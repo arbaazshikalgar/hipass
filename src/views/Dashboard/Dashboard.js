@@ -23,6 +23,7 @@ import {
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
 import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities';
 import Chart from "chart.js";
+import DefaultAside from '../../containers/DefaultLayout/DefaultAside';
 
 
 const Widget03 = lazy(() => import('../../views/Widgets/Widget03'));
@@ -524,27 +525,6 @@ class Dashboard extends Component {
 
   renderHeader = () => {
     return(
-      // <tr className="header_color">
-      //   <td width="40%">
-      //     <div>File Name</div>
-      //   </td>
-      //   <td>
-      //     <div className="clearfix">
-      //       <div className="text-center">
-      //         <small>File Date</small>
-      //       </div>
-      //     </div>
-      //   </td>
-      //   <td className="text-center">
-      //     <small>Status</small>
-      //   </td>
-      //   <td className="text-center">
-      //     <strong>Submitter</strong>
-      //   </td>
-      //   <td className="text-center">
-      //     <strong>Reciever</strong>
-      //   </td>
-      // </tr>
       <tr className="header_color">
         <th className="header_text_color">File Name</th>
         <th className="text-center header_text_color">File Date</th>
@@ -586,26 +566,26 @@ class Dashboard extends Component {
     array.forEach(item => {
       row.push(
         <tr>
-        <td width="40%">
-          <div>{item.fileName}</div>
-        </td>
-        <td>
-          <div className="clearfix">
-            <div className="text-center">
-              <small>{item.fileDate}</small>
+          <td width="40%">
+            <div>{item.fileName}</div>
+          </td>
+          <td>
+            <div className="clearfix">
+              <div className="text-center">
+                <small>{item.fileDate}</small>
+              </div>
             </div>
-          </div>
-        </td>
-        <td className="text-center">
-          <small>{item.fileStatus}</small>
-        </td>
-        <td className="text-center">
-          <strong>{item.fileSubmitter}</strong>
-        </td>
-        <td className="text-center">
-          <strong>{item.fileReciever}</strong>
-        </td>
-      </tr>
+          </td>
+          <td className="text-center">
+            <small>{item.fileStatus}</small>
+          </td>
+          <td className="text-center">
+            <strong>{item.fileSubmitter}</strong>
+          </td>
+          <td className="text-center">
+            <strong>{item.fileReciever}</strong>
+          </td>
+        </tr>
       )
     });
 
@@ -623,38 +603,38 @@ class Dashboard extends Component {
     return (
       <div className="animated fadeIn">
         <Row>
-          
-          <Col xs="12" sm="6" lg="6">
-          <Card>
-            <CardBody>
-              <div className="chart-wrapper">
-                <Pie data={pie} />
-              </div>
-            </CardBody>
-          </Card>
-          </Col>
-
-          <Col xs="12" sm="6" lg="6">
-          <Card>
-            <CardBody>
-              <div className="chart-wrapper">
-                <Bar data={bar}/>
-              </div>
-            </CardBody>
-          </Card>
-          </Col>
-        </Row>
-        <Row>
           <Col>
-            <Card>
-              {/* <CardBody> */}
-                {/* <br /> */}
-                <Table hover responsive className="table-outline mb-0 d-none d-sm-table">
-                  {this.renderHeader()}
-                  {this.renderRows()}
-                </Table>
-              {/* </CardBody> */}
+            <Card className="col-height">
+              <CardBody>
+                <Row>
+                  <Col xs="12" sm="6" lg="6">
+                    <div className="chart-wrapper">
+                      <Pie data={pie} />
+                    </div>
+                  </Col>
+
+                  <Col xs="12" sm="6" lg="6">
+                    <div className="chart-wrapper">
+                      <Bar data={bar}/>
+                    </div>
+                  </Col>
+                </Row>
+              </CardBody>
             </Card>
+
+            <Row>
+              <Col>
+                <Card>
+                  <Table responsive className="table-outline mb-0 d-none d-sm-table">
+                    {this.renderHeader()}
+                    {this.renderRows()}
+                  </Table>
+                </Card>
+              </Col>
+            </Row>
+          </Col>
+          <Col xs="12" sm="3" lg="3">
+            <DefaultAside/>
           </Col>
         </Row>
       </div>

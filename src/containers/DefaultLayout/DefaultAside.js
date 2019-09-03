@@ -29,17 +29,6 @@ class DefaultAside extends Component {
     }
   }
 
-  renderHeader = () => {
-    return(
-      <thead className="thead-light">
-        <tr>
-          <th className="text-center">Name</th>
-          <th className="text-center">Value</th>
-        </tr>
-      </thead>
-    )
-  }
-
   renderRows = () => {
     let row = []
     let array = [{
@@ -74,7 +63,7 @@ class DefaultAside extends Component {
     array.forEach(item => {
       row.push(
         <tr>
-          <td className="text-center">
+          <td className="text-center" height='60px'>
             <div>{item.name}</div>
           </td>
           <td>
@@ -98,26 +87,13 @@ class DefaultAside extends Component {
 
     return (
       <React.Fragment>
-        <NavLink className={classNames({ active: this.state.activeTab === '1' })}
-          onClick={() => {
-            this.toggle('1');
-          }}>
-        </NavLink>
-        <TabContent activeTab={this.state.activeTab}>
-          <TabPane tabId="1">
-            <ListGroup className="list-group-accent" tag={'div'}>
-              <ListGroupItem className="list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small"></ListGroupItem>
-              <ListGroupItem action tag="a" href="#" className="list-group-item-accent-warning list-group-item-divider">
-                <Card>
-                  <Table hover responsive className="table-outline mb-0 d-none d-sm-table">
-                    {this.renderHeader()}
-                    {this.renderRows()}
-                  </Table>
-                </Card>
-              </ListGroupItem>
-            </ListGroup>
-          </TabPane>
-        </TabContent>
+        <div className="right-div">
+          <Card>
+            <Table responsive className="table-outline mb-0 d-none d-sm-table">
+              {this.renderRows()}
+            </Table>
+          </Card>
+        </div>
       </React.Fragment>
     );
   }
