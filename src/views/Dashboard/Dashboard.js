@@ -522,6 +522,81 @@ class Dashboard extends Component {
     });
   }
 
+  renderHeader = () => {
+    return(
+      <thead className="thead-light">
+        <tr>
+          <th>File Name</th>
+          <th className="text-center">File Date</th>
+          <th className="text-center">Status</th>
+          <th className="text-center">Submitter</th>
+          <th className="text-center">Reciever</th>
+        </tr>
+      </thead>
+    )
+  }
+
+  renderRows = () => {
+    let row = []
+    let array = [{
+      fileName: 'Yiorgos Avraamu',
+      fileDate: 'Jun 11, 2015 - Jul 10, 2015',
+      fileStatus: 'Verified',
+      fileSubmitter: 'OutReached Health Services',
+      fileReciever: 'NHIC',
+    },{
+      fileName: 'Yiorgos Avraamu',
+      fileDate: 'Jun 11, 2015 - Jul 10, 2015',
+      fileStatus: 'Verified',
+      fileSubmitter: 'OutReached Health Services',
+      fileReciever: 'NHIC',
+    },{
+      fileName: 'Yiorgos Avraamu',
+      fileDate: 'Jun 11, 2015 - Jul 10, 2015',
+      fileStatus: 'Verified',
+      fileSubmitter: 'OutReached Health Services',
+      fileReciever: 'NHIC',
+    },{
+      fileName: 'Yiorgos Avraamu',
+      fileDate: 'Jun 11, 2015 - Jul 10, 2015',
+      fileStatus: 'Verified',
+      fileSubmitter: 'OutReached Health Services',
+      fileReciever: 'NHIC',
+    }]
+
+    array.forEach(item => {
+      row.push(
+        <tr>
+        <td>
+          <div>Yiorgos Avraamu</div>
+        </td>
+        <td>
+          <div className="clearfix">
+            <div className="text-center">
+              <small>Jun 11, 2015 - Jul 10, 2015</small>
+            </div>
+          </div>
+        </td>
+        <td className="text-center">
+          <small>Verified</small>
+        </td>
+        <td className="text-center">
+          <strong>OutReached Health Services</strong>
+        </td>
+        <td className="text-center">
+          <strong>NHIC</strong>
+        </td>
+      </tr>
+      )
+    });
+
+    return(
+      <tbody>
+        {row}
+      </tbody>
+    )
+  }
+
   loading = () => <div className="animated fadeIn pt-1 text-center">Loading...</div>
 
   render() {
@@ -558,161 +633,8 @@ class Dashboard extends Component {
                 
                 <br />
                 <Table hover responsive className="table-outline mb-0 d-none d-sm-table">
-                  <thead className="thead-light">
-                  <tr>
-                    <th>File Name</th>
-                    <th className="text-center">File Date</th>
-                    <th className="text-center">Status</th>
-                    <th className="text-center">Submitter</th>
-                    <th className="text-center">Reciever</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td>
-                      <div>Yiorgos Avraamu</div>
-                      <div className="small text-muted">
-                        <span>New</span> | Registered: Jan 1, 2015
-                      </div>
-                    </td>
-                    <td>
-                      <div className="clearfix">
-                        <div className="text-center">
-                          <small>Jun 11, 2015 - Jul 10, 2015</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td className="text-center">
-                      <small>Verified</small>
-                    </td>
-                    <td className="text-center">
-                      <strong>OutReached Health Services</strong>
-                    </td>
-                    <td className="text-center">
-                      <strong>NHIC</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div>Avram Tarasios</div>
-                      <div className="small text-muted">
-                        <span>Recurring</span> | Registered: Jan 1, 2015
-                      </div>
-                    </td>
-                    <td>
-                      <div className="clearfix">
-                        <div className="text-center">
-                          <small>Jun 11, 2015 - Jul 10, 2015</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td className="text-center">
-                      <small>Verified</small>
-                    </td>
-                    <td className="text-center">
-                      <strong>OutReached Health Services</strong>
-                    </td>
-                    <td className="text-center">
-                      <strong>NHIC</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div>Quintin Ed</div>
-                      <div className="small text-muted">
-                        <span>New</span> | Registered: Jan 1, 2015
-                      </div>
-                    </td>
-                    <td>
-                      <div className="clearfix">
-                        <div className="text-center">
-                          <small>Jun 11, 2015 - Jul 10, 2015</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td className="text-center">
-                      <small>Verified</small>
-                    </td>
-                    <td className="text-center">
-                      <strong>OutReached Health Services</strong>
-                    </td>
-                    <td className="text-center">
-                      <strong>NHIC</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div>Enéas Kwadwo</div>
-                      <div className="small text-muted">
-                        <span>New</span> | Registered: Jan 1, 2015
-                      </div>
-                    </td>
-                    <td>
-                      <div className="clearfix">
-                        <div className="text-center">
-                          <small>Jun 11, 2015 - Jul 10, 2015</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td className="text-center">
-                      <small>Verified</small>
-                    </td>
-                    <td className="text-center">
-                      <strong>OutReached Health Services</strong>
-                    </td>
-                    <td className="text-center">
-                      <strong>NHIC</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div>Agapetus Tadeáš</div>
-                      <div className="small text-muted">
-                        <span>New</span> | Registered: Jan 1, 2015
-                      </div>
-                    </td>
-                    <td>
-                      <div className="clearfix">
-                        <div className="text-center">
-                          <small>Jun 11, 2015 - Jul 10, 2015</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td className="text-center">
-                      <small>In Progress</small>
-                    </td>
-                    <td className="text-center">
-                      <strong>OutReached Health Services</strong>
-                    </td>
-                    <td className="text-center">
-                      <strong>NHIC</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div>Friderik Dávid</div>
-                      <div className="small text-muted">
-                        <span>New</span> | Registered: Jan 1, 2015
-                      </div>
-                    </td>
-                    <td>
-                      <div className="clearfix">
-                        <div className="text-center">
-                          <small>Jun 11, 2015 - Jul 10, 2015</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td className="text-center">
-                      <small>Verified</small>
-                    </td>
-                    <td className="text-center">
-                      <strong>OutReached Health Services</strong>
-                    </td>
-                    <td className="text-center">
-                      <strong>NHIC</strong>
-                    </td>
-                  </tr>
-                  </tbody>
+                  {this.renderHeader()}
+                  {this.renderRows()}
                 </Table>
               </CardBody>
             </Card>
