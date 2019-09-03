@@ -29,6 +29,68 @@ class DefaultAside extends Component {
     }
   }
 
+  renderHeader = () => {
+    return(
+      <thead className="thead-light">
+        <tr>
+          <th className="text-center">Name</th>
+          <th className="text-center">Value</th>
+        </tr>
+      </thead>
+    )
+  }
+
+  renderRows = () => {
+    let row = []
+    let array = [{
+      name: 'Claims Queue',
+      value: '250',
+    },{
+      name: 'Work in Progress',
+      value: '210',
+    },{
+      name: 'Total Files',
+      value: '78',
+    },{
+      name: 'Submitted Claims',
+      value: '1304',
+    },{
+      name: 'Paid Claims',
+      value: '0',
+    },{
+      name: 'Accepted Claims',
+      value: '596',
+    },{
+      name: 'Failed File Load',
+      value: '5',
+    },{
+      name: 'Rejected Claims',
+      value: '44',
+    },{
+      name: 'Partial Paid Claims',
+      value: '44',
+    },]
+
+    array.forEach(item => {
+      row.push(
+        <tr>
+          <td className="text-center">
+            <div>{item.name}</div>
+          </td>
+          <td>
+            <div>{item.value}</div>
+          </td>
+        </tr>
+      )
+    });
+
+    return(
+      <tbody>
+        {row}
+      </tbody>
+    )
+  }
+
   render() {
 
     // eslint-disable-next-line
@@ -48,87 +110,8 @@ class DefaultAside extends Component {
               <ListGroupItem action tag="a" href="#" className="list-group-item-accent-warning list-group-item-divider">
                 <Card>
                   <Table hover responsive className="table-outline mb-0 d-none d-sm-table">
-                    <thead className="thead-light">
-                      <tr>
-                        <th className="text-center">Name</th>
-                        <th className="text-center">Value</th>
-                      </tr>
-                    </thead>
-
-                    <tbody>
-                      <tr>
-                        <td className="text-center">
-                          <div>Clamis Queue</div>
-                        </td>
-                        <td>
-                          <div>250</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="text-center">
-                          <div>Work in Progerss</div>
-                        </td>
-                        <td>
-                          <div>250</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="text-center">
-                          <div>Total Files</div>
-                        </td>
-                        <td>
-                          <div>250</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="text-center">
-                          <div>Submiitted  Claims</div>
-                        </td>
-                        <td>
-                          <div>250</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="text-center">
-                          <div>Paid Claims</div>
-                        </td>
-                        <td>
-                          <div>250</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="text-center">
-                          <div>Accepted Claims</div>
-                        </td>
-                        <td>
-                          <div>250</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="text-center">
-                          <div>Failed File Load</div>
-                        </td>
-                        <td>
-                          <div>250</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="text-center">
-                          <div>Rejected Claims</div>
-                        </td>
-                        <td>
-                          <div>250</div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="text-center">
-                          <div>Partial Paid Claims</div>
-                        </td>
-                        <td>
-                          <div>250</div>
-                        </td>
-                      </tr>
-                    </tbody>
+                    {this.renderHeader()}
+                    {this.renderRows()}
                   </Table>
                 </Card>
               </ListGroupItem>

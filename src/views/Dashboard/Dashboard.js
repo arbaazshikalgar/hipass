@@ -524,15 +524,34 @@ class Dashboard extends Component {
 
   renderHeader = () => {
     return(
-      <thead className="thead-light">
-        <tr>
-          <th>File Name</th>
-          <th className="text-center">File Date</th>
-          <th className="text-center">Status</th>
-          <th className="text-center">Submitter</th>
-          <th className="text-center">Reciever</th>
-        </tr>
-      </thead>
+      // <tr className="header_color">
+      //   <td width="40%">
+      //     <div>File Name</div>
+      //   </td>
+      //   <td>
+      //     <div className="clearfix">
+      //       <div className="text-center">
+      //         <small>File Date</small>
+      //       </div>
+      //     </div>
+      //   </td>
+      //   <td className="text-center">
+      //     <small>Status</small>
+      //   </td>
+      //   <td className="text-center">
+      //     <strong>Submitter</strong>
+      //   </td>
+      //   <td className="text-center">
+      //     <strong>Reciever</strong>
+      //   </td>
+      // </tr>
+      <tr className="header_color">
+        <th className="header_text_color">File Name</th>
+        <th className="text-center header_text_color">File Date</th>
+        <th className="text-center header_text_color">Status</th>
+        <th className="text-center header_text_color">Submitter</th>
+        <th className="text-center header_text_color">Reciever</th>
+      </tr>
     )
   }
 
@@ -545,19 +564,19 @@ class Dashboard extends Component {
       fileSubmitter: 'OutReached Health Services',
       fileReciever: 'NHIC',
     },{
-      fileName: 'Yiorgos Avraamu',
+      fileName: 'Rick Sanchez',
       fileDate: 'Jun 11, 2015 - Jul 10, 2015',
-      fileStatus: 'Verified',
+      fileStatus: 'In Progress',
       fileSubmitter: 'OutReached Health Services',
       fileReciever: 'NHIC',
     },{
-      fileName: 'Yiorgos Avraamu',
+      fileName: 'John Snow',
       fileDate: 'Jun 11, 2015 - Jul 10, 2015',
-      fileStatus: 'Verified',
+      fileStatus: 'Error',
       fileSubmitter: 'OutReached Health Services',
       fileReciever: 'NHIC',
     },{
-      fileName: 'Yiorgos Avraamu',
+      fileName: 'Walter White',
       fileDate: 'Jun 11, 2015 - Jul 10, 2015',
       fileStatus: 'Verified',
       fileSubmitter: 'OutReached Health Services',
@@ -567,24 +586,24 @@ class Dashboard extends Component {
     array.forEach(item => {
       row.push(
         <tr>
-        <td>
-          <div>Yiorgos Avraamu</div>
+        <td width="40%">
+          <div>{item.fileName}</div>
         </td>
         <td>
           <div className="clearfix">
             <div className="text-center">
-              <small>Jun 11, 2015 - Jul 10, 2015</small>
+              <small>{item.fileDate}</small>
             </div>
           </div>
         </td>
         <td className="text-center">
-          <small>Verified</small>
+          <small>{item.fileStatus}</small>
         </td>
         <td className="text-center">
-          <strong>OutReached Health Services</strong>
+          <strong>{item.fileSubmitter}</strong>
         </td>
         <td className="text-center">
-          <strong>NHIC</strong>
+          <strong>{item.fileReciever}</strong>
         </td>
       </tr>
       )
@@ -628,15 +647,13 @@ class Dashboard extends Component {
         <Row>
           <Col>
             <Card>
-           
-              <CardBody>
-                
-                <br />
+              {/* <CardBody> */}
+                {/* <br /> */}
                 <Table hover responsive className="table-outline mb-0 d-none d-sm-table">
                   {this.renderHeader()}
                   {this.renderRows()}
                 </Table>
-              </CardBody>
+              {/* </CardBody> */}
             </Card>
           </Col>
         </Row>
